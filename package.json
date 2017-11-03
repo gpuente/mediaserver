@@ -1,0 +1,36 @@
+{
+  "name": "mediaserverjs",
+  "version": "0.0.1",
+  "description": "serve static files",
+  "main": "index.js",
+  "scripts": {
+    "start:development": "NODE_ENV=development babel-node --presets es2015 ./index.js",
+    "start:production": "npm run build && NODE_ENV=production node ./dist/index.js",
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./package.json,./package-lock.json --copy-files",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "server",
+    "mediaserver",
+    "streaming",
+    "stream"
+  ],
+  "author": "Guillermo Puente <guillermo.ps09@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mediaserver": "^0.1.0",
+    "nodemon": "^1.12.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^4.10.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "rimraf": "^2.6.2"
+  }
+}
